@@ -20,10 +20,11 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<ee:transform doc:name="Transform Message" doc:id="e69230e7-01f0-42cb-9da9-ca884442e2a5" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
+output application/csv
 ---
 payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="aa2ab45a-e019-4f03-b9c1-f46f643955dc" message="#[payload]"/>
 	</flow>
 </mule>
